@@ -171,6 +171,8 @@ select,input{
   outline:none;
 }
 
+select option:disabled{color:#aaa;background:#f3f0ea}
+
 select:focus,input:focus{
   border-color:var(--accent);
   box-shadow:0 0 0 3px rgba(138,106,69,.16);
@@ -404,7 +406,7 @@ button{
 
         <div class="full">
           <label for="qty">Stückzahl</label>
-          <input id="qty" type="number" min="1" step="1" value="56">
+          <input id="qty" type="number" min="1" step="1" value="50">
         </div>
       </div>
 
@@ -450,7 +452,7 @@ button{
 <script>
 const SETTINGS = {
   laborRate: 52,
-  increaseFactor: 1.08 * 1.05 * 1.16 * 1.05,
+  increaseFactor: 1.08 * 1.05 * 1.16 * 1.07,
   spanCost: 5,
   factorOver1400: 1.2,
   quantityDiscount20: 2.5,
@@ -544,6 +546,26 @@ function updateImage(serie){
   }
 }
 
+
+function updateDecorAvailability(){
+  const serie = document.getElementById('serie').value;
+  const carrier = document.getElementById('carrier').value;
+  const decorSelect = document.getElementById('decor');
+
+  const dbsNotAllowedSeries = ['S2000','S3000','S8000'];
+  const dbsNotAllowedCarrier = carrier.toLowerCase().includes('leichtbau') || carrier.toLowerCase().includes('spantischler');
+  const dbsAllowed = !dbsNotAllowedSeries.includes(serie) && !dbsNotAllowedCarrier;
+
+  Array.from(decorSelect.options).forEach(option => {
+    const isDbs = option.value.startsWith('DBS');
+    option.disabled = isDbs && !dbsAllowed;
+  });
+
+  if(!dbsAllowed && decorSelect.value.startsWith('DBS')){
+    decorSelect.value = 'Uni';
+  }
+}
+
 function calculate(){
   const serie = document.getElementById('serie').value;
   const decor = document.getElementById('decor').value;
@@ -553,10 +575,13 @@ function calculate(){
   const width = Math.max(0, Number(document.getElementById('width').value || 0));
   const qty = Math.max(1, Math.floor(Number(document.getElementById('qty').value || 1)));
 
+  updateDecorAvailability();
+  const activeDecor = document.getElementById('decor').value;
+
   updateImage(serie);
 
   const effectiveLength = length > 1400 ? length * SETTINGS.factorOver1400 : length;
-  const hpl = effectiveLength * width / 1000000 * (DECORS[decor] * 2 + SETTINGS.spanCost);
+  const hpl = effectiveLength * width / 1000000 * (DECORS[activeDecor] * 2 + SETTINGS.spanCost);
   const carrierCost = round1(CARRIERS[carrier] * length / 1000 * width / 1000);
   const perimeter = (length * 2 + width * 2) / 1000;
   const edgeCost = perimeter * SERIES[serie].edge;
@@ -579,7 +604,7 @@ function calculate(){
 
   const rows = [
     ['Serie', serie],
-    ['Dekor', decor],
+    ['Dekor', activeDecor],
     ['Träger', carrier],
     ['Gebeizt', stained],
     ['Mengenrabatt', quantityDiscount ? euro(quantityDiscount) + ' je Stück' : '–'],
@@ -593,7 +618,7 @@ function calculate(){
 
 Serie: ${serie}
 Format: ${length} x ${width} mm
-Dekor: ${decor}
+Dekor: ${activeDecor}
 Träger: ${carrier}
 Gebeizt: ${stained}
 Menge: ${qty} Stück
@@ -619,12 +644,13 @@ function sendMail(){
   window.location.href = `mailto:info@s-om.bayern?subject=${subject}&body=${body}`;
 }
 
-fillSelect('serie', SERIES, 'S2000');
+fillSelect('serie', SERIES, 'S6000');
 fillSelect('decor', DECORS, 'DBS Uni');
 fillSelect('carrier', CARRIERS, 'Span25');
 
 ['serie','decor','carrier','stained','length','width','qty'].forEach(id => {
   document.getElementById(id).addEventListener('input', calculate);
+  document.getElementById(id).addEventListener('change', calculate);
 });
 
 calculate();
