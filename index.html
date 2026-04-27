@@ -566,6 +566,32 @@ function updateDecorAvailability(){
   }
 }
 
+
+function updateStainedAvailability(){
+  const serie = document.getElementById('serie').value;
+  const stainedSelect = document.getElementById('stained');
+
+  const allowed = ['S2000','S3000','S6000F','S7000','S8000'].includes(serie);
+
+  if(!allowed){
+    stainedSelect.value = 'Nein';
+    stainedSelect.disabled = true;
+  } else {
+    stainedSelect.disabled = false;
+  }
+}
+
+function updateCarrierDefault(){
+  const serie = document.getElementById('serie').value;
+  const carrierSelect = document.getElementById('carrier');
+
+  const forceSpan19Series = ['S1000','S2000','S3000','S4000','S5000'];
+
+  if(forceSpan19Series.includes(serie)){
+    carrierSelect.value = 'Span19';
+  }
+}
+
 function calculate(){
   const serie = document.getElementById('serie').value;
   const decor = document.getElementById('decor').value;
@@ -576,6 +602,8 @@ function calculate(){
   const qty = Math.max(1, Math.floor(Number(document.getElementById('qty').value || 1)));
 
   updateDecorAvailability();
+  updateStainedAvailability();
+  updateCarrierDefault();
   const activeDecor = document.getElementById('decor').value;
 
   updateImage(serie);
