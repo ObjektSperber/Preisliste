@@ -571,7 +571,7 @@ function updateStainedAvailability(){
   const serie = document.getElementById('serie').value;
   const stainedSelect = document.getElementById('stained');
 
-  const allowed = ['S2000','S3000','S6000F','S7000','S8000'].includes(serie);
+  const allowed = ['S1000','S2000','S3000','S6000F','S7000','S8000'].includes(serie);
 
   if(!allowed){
     stainedSelect.value = 'Nein';
