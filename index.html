@@ -4,108 +4,631 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Sperber Objektmöbel – Preisliste 2026</title>
+
 <style>
-:root{--dark:#202020;--warm:#f5f1ea;--card:#fff;--line:#ded8ce;--muted:#707070;--accent:#8a6a45}
+:root{
+  --dark:#202020;
+  --warm:#f5f1ea;
+  --card:#ffffff;
+  --line:#ded8ce;
+  --muted:#707070;
+  --accent:#8a6a45;
+}
+
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#252525;background:linear-gradient(160deg,#fff,#f7f3ec)}
-.top{background:#202020;color:#fff;padding:18px 22px}
-.top-inner{max-width:1120px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.logo{letter-spacing:.48em;font-size:24px;font-weight:300}
-.logo small{display:block;letter-spacing:.18em;font-size:11px;color:#cfcfcf;margin-top:7px}
-.hero{background:linear-gradient(135deg,#202020,#3b352f);color:#fff}
-.hero-inner{max-width:1120px;margin:auto;padding:42px 22px;display:grid;grid-template-columns:1fr .72fr;gap:28px;align-items:center}
-.eyebrow{color:#d5c5ae;text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:700;margin-bottom:14px}
-h1{margin:0;font-size:clamp(34px,5vw,58px);letter-spacing:-.045em;line-height:.98}
-.hero p{color:rgba(255,255,255,.82);font-size:17px;line-height:1.55;max-width:620px}
-.hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:18px}
-.hero-card img{width:100%;border-radius:20px;aspect-ratio:1/1;object-fit:cover;background:#fff}
-.wrap{max-width:1120px;margin:auto;padding:26px 22px 42px}
-.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:start}
-.card{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 18px 45px rgba(0,0,0,.10)}
-h2{margin:0 0 18px;font-size:22px}
-.form{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-label{font-size:13px;font-weight:700;display:block;margin-bottom:7px;color:#383838}
-select,input{width:100%;border:1px solid #d9d1c5;background:#fff;border-radius:14px;padding:13px 12px;font-size:16px;outline:none}
-select:focus,input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(138,106,69,.16)}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#252525;
+  background:linear-gradient(160deg,#fff,#f7f3ec);
+}
+
+.top{
+  background:#202020;
+  color:#fff;
+  padding:18px 22px;
+}
+
+.top-inner{
+  max-width:1120px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+}
+
+.logo{
+  letter-spacing:.48em;
+  font-size:24px;
+  font-weight:300;
+}
+
+.logo small{
+  display:block;
+  letter-spacing:.18em;
+  font-size:11px;
+  color:#cfcfcf;
+  margin-top:7px;
+}
+
+.hero{
+  background:linear-gradient(135deg,#202020,#3b352f);
+  color:#fff;
+}
+
+.hero-inner{
+  max-width:1120px;
+  margin:auto;
+  padding:42px 22px;
+  display:grid;
+  grid-template-columns:1fr .72fr;
+  gap:28px;
+  align-items:center;
+}
+
+.eyebrow{
+  color:#d5c5ae;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:14px;
+}
+
+h1{
+  margin:0;
+  font-size:clamp(34px,5vw,58px);
+  letter-spacing:-.045em;
+  line-height:.98;
+}
+
+.hero p{
+  color:rgba(255,255,255,.82);
+  font-size:17px;
+  line-height:1.55;
+  max-width:620px;
+}
+
+.hero-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:28px;
+  padding:18px;
+}
+
+.hero-card img{
+  width:100%;
+  border-radius:20px;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  background:#fff;
+  display:block;
+}
+
+.hero-placeholder{
+  width:100%;
+  aspect-ratio:1/1;
+  border-radius:20px;
+  background:rgba(255,255,255,.10);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  color:rgba(255,255,255,.75);
+  text-align:center;
+  padding:24px;
+  line-height:1.4;
+}
+
+.wrap{
+  max-width:1120px;
+  margin:auto;
+  padding:26px 22px 42px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:22px;
+  align-items:start;
+}
+
+.card{
+  background:rgba(255,255,255,.94);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:22px;
+  box-shadow:0 18px 45px rgba(0,0,0,.10);
+}
+
+h2{
+  margin:0 0 18px;
+  font-size:22px;
+}
+
+.form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+label{
+  font-size:13px;
+  font-weight:700;
+  display:block;
+  margin-bottom:7px;
+  color:#383838;
+}
+
+select,input{
+  width:100%;
+  border:1px solid #d9d1c5;
+  background:#fff;
+  border-radius:14px;
+  padding:13px 12px;
+  font-size:16px;
+  outline:none;
+}
+
+select:focus,input:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(138,106,69,.16);
+}
+
 .full{grid-column:1/-1}
-.preview{margin-top:18px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#fff}
-.preview img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#fff}
-.preview-caption{padding:12px 14px;font-size:13px;color:var(--muted);background:#fbfaf7;border-top:1px solid var(--line)}
-.table{margin-top:18px;overflow:auto;border-radius:18px;border:1px solid var(--line)}
-table{border-collapse:collapse;width:100%;background:#fff;font-size:14px}
-th,td{padding:11px;border-bottom:1px solid #eee;text-align:left;white-space:nowrap}
-th{background:#f4f0ea;font-size:12px;text-transform:uppercase;color:#6b6259;letter-spacing:.04em}
+
+.preview{
+  margin-top:18px;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#fff;
+}
+
+.preview img{
+  width:100%;
+  display:block;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  background:#fff;
+}
+
+.preview-placeholder{
+  display:none;
+  aspect-ratio:16/9;
+  align-items:center;
+  justify-content:center;
+  background:#f4f0ea;
+  color:#6b6259;
+  font-size:14px;
+  text-align:center;
+  padding:20px;
+}
+
+.preview-caption{
+  padding:12px 14px;
+  font-size:13px;
+  color:var(--muted);
+  background:#fbfaf7;
+  border-top:1px solid var(--line);
+}
+
+.table{
+  margin-top:18px;
+  overflow:auto;
+  border-radius:18px;
+  border:1px solid var(--line);
+}
+
+table{
+  border-collapse:collapse;
+  width:100%;
+  background:#fff;
+  font-size:14px;
+}
+
+th,td{
+  padding:11px;
+  border-bottom:1px solid #eee;
+  text-align:left;
+  white-space:nowrap;
+}
+
+th{
+  background:#f4f0ea;
+  font-size:12px;
+  text-transform:uppercase;
+  color:#6b6259;
+  letter-spacing:.04em;
+}
+
 tr:last-child td{border-bottom:0}
-.note{font-size:12px;color:var(--muted);line-height:1.45;margin-top:14px}
-.result{background:linear-gradient(160deg,#202020,#3c352d);color:#fff;border-radius:28px;padding:24px;position:sticky;top:18px;box-shadow:0 18px 45px rgba(0,0,0,.12)}
-.small{font-size:13px;color:rgba(255,255,255,.78);line-height:1.45}
-.price{font-size:clamp(38px,5vw,56px);font-weight:800;letter-spacing:-.055em;margin:10px 0 0}
-.line{display:flex;justify-content:space-between;gap:15px;border-top:1px solid rgba(255,255,255,.18);padding-top:12px;margin-top:12px;font-size:14px}
+
+.note{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.45;
+  margin-top:14px;
+}
+
+.result{
+  background:linear-gradient(160deg,#202020,#3c352d);
+  color:#fff;
+  border-radius:28px;
+  padding:24px;
+  position:sticky;
+  top:18px;
+  box-shadow:0 18px 45px rgba(0,0,0,.12);
+}
+
+.small{
+  font-size:13px;
+  color:rgba(255,255,255,.78);
+  line-height:1.45;
+}
+
+.price{
+  font-size:clamp(38px,5vw,56px);
+  font-weight:800;
+  letter-spacing:-.055em;
+  margin:10px 0 0;
+}
+
+.line{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  border-top:1px solid rgba(255,255,255,.18);
+  padding-top:12px;
+  margin-top:12px;
+  font-size:14px;
+}
+
 .line span:first-child{color:rgba(255,255,255,.70)}
-.buttons{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:17px}
-button{border:0;border-radius:14px;padding:13px 12px;font-size:15px;font-weight:700;cursor:pointer}
-.primary{background:#fff;color:#202020}.secondary{background:rgba(255,255,255,.14);color:#fff}.mail{background:#d3c3ad;color:#211b15}
-.footer-note{margin-top:16px;color:rgba(255,255,255,.72);font-size:13px;line-height:1.45}
-@media(max-width:850px){.hero-inner{grid-template-columns:1fr}.hero-card{display:none}.grid{grid-template-columns:1fr}.result{position:relative;top:auto}.top-inner{align-items:flex-start}.top-note{display:none}}
-@media(max-width:620px){.wrap,.top-inner,.hero-inner{padding-left:14px;padding-right:14px}.form{grid-template-columns:1fr}.buttons{grid-template-columns:1fr}.logo{font-size:18px;letter-spacing:.34em}}
-@media print{.top,.hero,.buttons,.note,.footer-note{display:none}.grid{display:block}.card,.result{box-shadow:none;border:1px solid #ddd;margin-bottom:18px}.result{color:#111;background:#fff}.small,.line span:first-child{color:#555}}
+
+.buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:10px;
+  margin-top:17px;
+}
+
+button{
+  border:0;
+  border-radius:14px;
+  padding:13px 12px;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.primary{background:#fff;color:#202020}
+.secondary{background:rgba(255,255,255,.14);color:#fff}
+.mail{background:#d3c3ad;color:#211b15}
+
+.footer-note{
+  margin-top:16px;
+  color:rgba(255,255,255,.72);
+  font-size:13px;
+  line-height:1.45;
+}
+
+@media(max-width:850px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-card{display:none}
+  .grid{grid-template-columns:1fr}
+  .result{position:relative;top:auto}
+  .top-note{display:none}
+}
+
+@media(max-width:620px){
+  .wrap,.top-inner,.hero-inner{padding-left:14px;padding-right:14px}
+  .form{grid-template-columns:1fr}
+  .buttons{grid-template-columns:1fr}
+  .logo{font-size:18px;letter-spacing:.34em}
+}
+
+@media print{
+  .top,.hero,.buttons,.note,.footer-note{display:none}
+  .grid{display:block}
+  .card,.result{box-shadow:none;border:1px solid #ddd;margin-bottom:18px}
+  .result{color:#111;background:#fff}
+  .small,.line span:first-child{color:#555}
+}
 </style>
 </head>
+
 <body>
-<div class="top"><div class="top-inner"><div class="logo">SPERBER<small>Objektmöbel</small></div><div class="top-note">Preisliste 2026<br>Standard-Tischplatten</div></div></div>
-<section class="hero"><div class="hero-inner"><div><div class="eyebrow">Individuelle Fertigung · Bayern</div><h1>Preisrechner für Tischplatten</h1><p>Wählen Sie Serie, Format, Dekor und Menge. Der angezeigte Preis dient als schnelle Orientierung für Standardausführungen.</p></div><div class="hero-card"><img id="heroImage" src="Serie2000T-1-600x600.jpg" alt="Tischplatten Serie"></div></div></section>
-<main class="wrap"><div class="grid">
-<section class="card"><h2>Artikel auswählen</h2><div class="form">
-<div><label for="serie">Serie</label><select id="serie"></select></div>
-<div><label for="decor">Dekor</label><select id="decor"></select></div>
-<div><label for="length">Länge in mm</label><input id="length" type="number" min="300" step="1" value="1400"></div>
-<div><label for="width">Breite in mm</label><input id="width" type="number" min="300" step="1" value="700"></div>
-<div><label for="carrier">Träger</label><select id="carrier"></select></div>
-<div><label for="stained">Gebeizt</label><select id="stained"><option>Nein</option><option>JA</option></select></div>
-<div class="full"><label for="qty">Stückzahl</label><input id="qty" type="number" min="1" step="1" value="56"></div>
+
+<div class="top">
+  <div class="top-inner">
+    <div class="logo">SPERBER<small>Objektmöbel</small></div>
+    <div class="top-note">Preisliste 2026<br>Standard-Tischplatten</div>
+  </div>
 </div>
-<div class="preview"><img id="previewImage" src="Serie2000T-1-600x600.jpg" alt="Ausgewählte Tischplattenserie"><div class="preview-caption" id="previewCaption">S2000 – Beispielbild der gewählten Serie</div></div>
-<div class="table"><table><thead><tr><th>Bereich</th><th>Wert</th></tr></thead><tbody id="details"></tbody></table></div>
-<p class="note">Hinweis: Alle Preise sind freibleibend und stellen keine verbindliche Preiszusage dar.</p></section>
-<aside class="result"><div class="small">Orientierungspreis netto</div><div class="price" id="unitPrice">–</div><div class="small">pro Stück</div>
-<div class="line"><span>Gesamt netto</span><strong id="totalPrice">–</strong></div><div class="line"><span>Menge</span><strong id="qtyOut">–</strong></div><div class="line"><span>Format</span><strong id="formatOut">–</strong></div>
-<div class="buttons"><button class="primary" onclick="window.print()">Drucken</button><button class="secondary" onclick="copySummary()">Kopieren</button><button class="mail" onclick="sendMail()">Anfrage senden</button></div>
-<p class="footer-note">Alle Preise freibleibend. Fracht, Sonderformate und Sonderdekore nach Anfrage.</p></aside>
-</div></main>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Individuelle Fertigung · Bayern</div>
+      <h1>Preisrechner für Tischplatten</h1>
+      <p>Wählen Sie Serie, Format, Dekor und Menge. Der angezeigte Preis dient als schnelle Orientierung für Standardausführungen.</p>
+    </div>
+    <div class="hero-card">
+      <img id="heroImage" src="Serie2000T-1-600x600.jpg" alt="Tischplatten Serie">
+      <div id="heroPlaceholder" class="hero-placeholder">Für diese Serie ist aktuell kein Beispielbild hinterlegt.</div>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="grid">
+
+    <section class="card">
+      <h2>Artikel auswählen</h2>
+
+      <div class="form">
+        <div>
+          <label for="serie">Serie</label>
+          <select id="serie"></select>
+        </div>
+
+        <div>
+          <label for="decor">Dekor</label>
+          <select id="decor"></select>
+        </div>
+
+        <div>
+          <label for="length">Länge in mm</label>
+          <input id="length" type="number" min="300" step="1" value="1400">
+        </div>
+
+        <div>
+          <label for="width">Breite in mm</label>
+          <input id="width" type="number" min="300" step="1" value="700">
+        </div>
+
+        <div>
+          <label for="carrier">Träger</label>
+          <select id="carrier"></select>
+        </div>
+
+        <div>
+          <label for="stained">Gebeizt</label>
+          <select id="stained">
+            <option>Nein</option>
+            <option>JA</option>
+          </select>
+        </div>
+
+        <div class="full">
+          <label for="qty">Stückzahl</label>
+          <input id="qty" type="number" min="1" step="1" value="56">
+        </div>
+      </div>
+
+      <div class="preview">
+        <img id="previewImage" src="Serie2000T-1-600x600.jpg" alt="Ausgewählte Tischplattenserie">
+        <div id="previewPlaceholder" class="preview-placeholder">Für diese Serie ist aktuell kein Beispielbild hinterlegt.</div>
+        <div class="preview-caption" id="previewCaption">S2000 – Beispielbild der gewählten Serie</div>
+      </div>
+
+      <div class="table">
+        <table>
+          <thead>
+            <tr><th>Bereich</th><th>Wert</th></tr>
+          </thead>
+          <tbody id="details"></tbody>
+        </table>
+      </div>
+
+      <p class="note">Hinweis: Alle Preise sind freibleibend und stellen keine verbindliche Preiszusage dar.</p>
+    </section>
+
+    <aside class="result">
+      <div class="small">Orientierungspreis netto</div>
+      <div class="price" id="unitPrice">–</div>
+      <div class="small">pro Stück</div>
+
+      <div class="line"><span>Gesamt netto</span><strong id="totalPrice">–</strong></div>
+      <div class="line"><span>Menge</span><strong id="qtyOut">–</strong></div>
+      <div class="line"><span>Format</span><strong id="formatOut">–</strong></div>
+
+      <div class="buttons">
+        <button class="primary" onclick="window.print()">Drucken</button>
+        <button class="secondary" onclick="copySummary()">Kopieren</button>
+        <button class="mail" onclick="sendMail()">Anfrage senden</button>
+      </div>
+
+      <p class="footer-note">Alle Preise freibleibend. Fracht, Sonderformate und Sonderdekore nach Anfrage.</p>
+    </aside>
+
+  </div>
+</main>
+
 <script>
-const SETTINGS={laborRate:52,increaseFactor:1.08*1.05*1.16*1.05,spanCost:5,factorOver1400:1.2,quantityDiscount20:2.5,quantityDiscount50:5,smallQtySurcharge:15,stainLfmCost:2.2};
-const SERIES={"S2000":{edge:8.3,minutes:30},"S3000":{edge:6.8,minutes:30},"S4000":{edge:7.8,minutes:30},"S6000":{edge:3.9,minutes:15},"S8000":{edge:5.0,minutes:20},"S1000":{edge:8.3,minutes:45},"S6000F":{edge:4.1,minutes:20},"S7000":{edge:6.5,minutes:35}};
-const SERIES_IMAGES={"S2000":"Serie2000T-1-600x600.jpg","S3000":"Serie3000T-600x600.jpg","S4000":"Serie4000T-600x600.jpg","S6000":"Serie6000T2-600x600.jpg","S8000":"Serie8000T-600x600.jpg","S5000":"Serie5000T-600x600.jpg","S6000F":"Serie6000FT-600x600.jpg","S7000":"Serie7000T-600x600.jpg"};
-const DECORS={"Uni":12,"Holz":14.5,"Xtreme matt":24,"Eiche furniert":26,"Lino":30,"DBS Holz":5,"DBS Uni":1};
-const CARRIERS={"Span19":0,"Span25":3.2,"Span28":3.7,"Leichtbau19":28,"Leichtbau25":30.5,"Spantischler19":19,"Spantischler25":21};
-function euro(n){return new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(n)}
-function round1(n){return Math.round(n*10)/10}
-function fillSelect(id,data,selected){const el=document.getElementById(id);el.innerHTML=Object.keys(data).map(k=>`<option ${k===selected?'selected':''}>${k}</option>`).join('')}
-function updateImage(serie){const img=SERIES_IMAGES[serie]||SERIES_IMAGES.S2000;document.getElementById('previewImage').src=img;document.getElementById('heroImage').src=img;document.getElementById('previewCaption').textContent=serie+' – Beispielbild der gewählten Serie'}
-function calculate(){
-const serie=document.getElementById('serie').value,decor=document.getElementById('decor').value,carrier=document.getElementById('carrier').value,stained=document.getElementById('stained').value;
-const length=Math.max(0,Number(document.getElementById('length').value||0)),width=Math.max(0,Number(document.getElementById('width').value||0)),qty=Math.max(1,Math.floor(Number(document.getElementById('qty').value||1)));
-updateImage(serie);
-const effectiveLength=length>1400?length*SETTINGS.factorOver1400:length;
-const hpl=effectiveLength*width/1000000*(DECORS[decor]*2+SETTINGS.spanCost);
-const carrierCost=round1(CARRIERS[carrier]*length/1000*width/1000);
-const perimeter=(length*2+width*2)/1000;
-const edgeCost=perimeter*SERIES[serie].edge;
-const laborCost=SETTINGS.laborRate/60*SERIES[serie].minutes;
-const seriesCost=round1(hpl+edgeCost+laborCost);
-const stainedCost=stained==='JA'?round1(perimeter*SETTINGS.stainLfmCost):0;
-let quantityDiscount=0;if(qty>49)quantityDiscount=SETTINGS.quantityDiscount50;else if(qty>19)quantityDiscount=SETTINGS.quantityDiscount20;
-const unitBeforeDiscount=round1((seriesCost+carrierCost+stainedCost)*SETTINGS.increaseFactor);
-const unit=unitBeforeDiscount-quantityDiscount;
-const total=qty<10?unit*qty+SETTINGS.smallQtySurcharge:unit*qty;
-document.getElementById('unitPrice').textContent=euro(unit);document.getElementById('totalPrice').textContent=euro(total);document.getElementById('qtyOut').textContent=qty+' Stück';document.getElementById('formatOut').textContent=length+' × '+width+' mm';
-const rows=[['Serie',serie],['Dekor',decor],['Träger',carrier],['Gebeizt',stained],['Mengenrabatt',quantityDiscount?euro(quantityDiscount)+' je Stück':'–'],['Mindermengenzuschlag',qty<10?euro(SETTINGS.smallQtySurcharge):'–']];
-document.getElementById('details').innerHTML=rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('');
-window.currentSummary=`Preisanfrage Standard-Tischplatte\n\nSerie: ${serie}\nFormat: ${length} x ${width} mm\nDekor: ${decor}\nTräger: ${carrier}\nGebeizt: ${stained}\nMenge: ${qty} Stück\n\nStückpreis netto: ${euro(unit)}\nGesamt netto: ${euro(total)}\n\nHinweis: Preise freibleibend, Fracht und Sonderausführungen nach Anfrage.`;
+const SETTINGS = {
+  laborRate: 52,
+  increaseFactor: 1.08 * 1.05 * 1.16 * 1.05,
+  spanCost: 5,
+  factorOver1400: 1.2,
+  quantityDiscount20: 2.5,
+  quantityDiscount50: 5,
+  smallQtySurcharge: 15,
+  stainLfmCost: 2.2
+};
+
+const SERIES = {
+  "S1000": { edge: 8.3, minutes: 45 },
+  "S2000": { edge: 8.3, minutes: 30 },
+  "S3000": { edge: 6.8, minutes: 30 },
+  "S4000": { edge: 7.8, minutes: 30 },
+  "S5000": { edge: 7.0, minutes: 30 },
+  "S6000": { edge: 3.9, minutes: 15 },
+  "S6000F": { edge: 4.1, minutes: 20 },
+  "S7000": { edge: 6.5, minutes: 35 },
+  "S8000": { edge: 5.0, minutes: 20 }
+};
+
+const SERIES_IMAGES = {
+  "S2000": "Serie2000T-1-600x600.jpg",
+  "S3000": "Serie3000T-600x600.jpg",
+  "S4000": "Serie4000T-600x600.jpg",
+  "S5000": "Serie5000T-600x600.jpg",
+  "S6000": "Serie6000T2-600x600.jpg",
+  "S6000F": "Serie6000FT-600x600.jpg",
+  "S7000": "Serie7000T-600x600.jpg",
+  "S8000": "Serie8000T-600x600.jpg"
+};
+
+const DECORS = {
+  "Uni": 12,
+  "Holz": 14.5,
+  "Xtreme matt": 24,
+  "Eiche furniert": 26,
+  "Lino": 30,
+  "DBS Holz": 5,
+  "DBS Uni": 1
+};
+
+const CARRIERS = {
+  "Span19": 0,
+  "Span25": 3.2,
+  "Span28": 3.7,
+  "Leichtbau19": 28,
+  "Leichtbau25": 30.5,
+  "Spantischler19": 19,
+  "Spantischler25": 21
+};
+
+function euro(n){
+  return new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(n);
 }
-function copySummary(){navigator.clipboard?.writeText(window.currentSummary||'').then(()=>alert('Zusammenfassung kopiert.'))}
-function sendMail(){const subject=encodeURIComponent("Preisanfrage Tischplatte – Sperber Objektmöbel");const body=encodeURIComponent("Hallo,\n\nich interessiere mich für folgende Ausführung:\n\n"+(window.currentSummary||"")+"\n\nBitte senden Sie mir hierzu ein Angebot.\n\nVielen Dank!");window.location.href=`mailto:info@s-om.bayern?subject=${subject}&body=${body}`}
-fillSelect('serie',SERIES,'S2000');fillSelect('decor',DECORS,'DBS Uni');fillSelect('carrier',CARRIERS,'Span25');['serie','decor','carrier','stained','length','width','qty'].forEach(id=>document.getElementById(id).addEventListener('input',calculate));calculate();
+
+function round1(n){
+  return Math.round(n * 10) / 10;
+}
+
+function fillSelect(id, data, selected){
+  const el = document.getElementById(id);
+  el.innerHTML = Object.keys(data).map(k => `<option ${k===selected?'selected':''}>${k}</option>`).join('');
+}
+
+function updateImage(serie){
+  const imgPath = SERIES_IMAGES[serie];
+
+  const previewImage = document.getElementById('previewImage');
+  const previewPlaceholder = document.getElementById('previewPlaceholder');
+  const heroImage = document.getElementById('heroImage');
+  const heroPlaceholder = document.getElementById('heroPlaceholder');
+
+  if(imgPath){
+    previewImage.src = imgPath;
+    previewImage.style.display = "block";
+    previewPlaceholder.style.display = "none";
+
+    heroImage.src = imgPath;
+    heroImage.style.display = "block";
+    heroPlaceholder.style.display = "none";
+
+    document.getElementById('previewCaption').textContent = serie + ' – Beispielbild der gewählten Serie';
+  } else {
+    previewImage.style.display = "none";
+    previewPlaceholder.style.display = "flex";
+
+    heroImage.style.display = "none";
+    heroPlaceholder.style.display = "flex";
+
+    document.getElementById('previewCaption').textContent = serie + ' – kein Beispielbild hinterlegt';
+  }
+}
+
+function calculate(){
+  const serie = document.getElementById('serie').value;
+  const decor = document.getElementById('decor').value;
+  const carrier = document.getElementById('carrier').value;
+  const stained = document.getElementById('stained').value;
+  const length = Math.max(0, Number(document.getElementById('length').value || 0));
+  const width = Math.max(0, Number(document.getElementById('width').value || 0));
+  const qty = Math.max(1, Math.floor(Number(document.getElementById('qty').value || 1)));
+
+  updateImage(serie);
+
+  const effectiveLength = length > 1400 ? length * SETTINGS.factorOver1400 : length;
+  const hpl = effectiveLength * width / 1000000 * (DECORS[decor] * 2 + SETTINGS.spanCost);
+  const carrierCost = round1(CARRIERS[carrier] * length / 1000 * width / 1000);
+  const perimeter = (length * 2 + width * 2) / 1000;
+  const edgeCost = perimeter * SERIES[serie].edge;
+  const laborCost = SETTINGS.laborRate / 60 * SERIES[serie].minutes;
+  const seriesCost = round1(hpl + edgeCost + laborCost);
+  const stainedCost = stained === 'JA' ? round1(perimeter * SETTINGS.stainLfmCost) : 0;
+
+  let quantityDiscount = 0;
+  if(qty > 49) quantityDiscount = SETTINGS.quantityDiscount50;
+  else if(qty > 19) quantityDiscount = SETTINGS.quantityDiscount20;
+
+  const unitBeforeDiscount = round1((seriesCost + carrierCost + stainedCost) * SETTINGS.increaseFactor);
+  const unit = unitBeforeDiscount - quantityDiscount;
+  const total = qty < 10 ? unit * qty + SETTINGS.smallQtySurcharge : unit * qty;
+
+  document.getElementById('unitPrice').textContent = euro(unit);
+  document.getElementById('totalPrice').textContent = euro(total);
+  document.getElementById('qtyOut').textContent = qty + ' Stück';
+  document.getElementById('formatOut').textContent = length + ' × ' + width + ' mm';
+
+  const rows = [
+    ['Serie', serie],
+    ['Dekor', decor],
+    ['Träger', carrier],
+    ['Gebeizt', stained],
+    ['Mengenrabatt', quantityDiscount ? euro(quantityDiscount) + ' je Stück' : '–'],
+    ['Mindermengenzuschlag', qty < 10 ? euro(SETTINGS.smallQtySurcharge) : '–']
+  ];
+
+  document.getElementById('details').innerHTML = rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('');
+
+  window.currentSummary =
+`Preisanfrage Standard-Tischplatte
+
+Serie: ${serie}
+Format: ${length} x ${width} mm
+Dekor: ${decor}
+Träger: ${carrier}
+Gebeizt: ${stained}
+Menge: ${qty} Stück
+
+Stückpreis netto: ${euro(unit)}
+Gesamt netto: ${euro(total)}
+
+Hinweis: Preise freibleibend, Fracht und Sonderausführungen nach Anfrage.`;
+}
+
+function copySummary(){
+  navigator.clipboard?.writeText(window.currentSummary || '').then(() => alert('Zusammenfassung kopiert.'));
+}
+
+function sendMail(){
+  const subject = encodeURIComponent("Preisanfrage Tischplatte – Sperber Objektmöbel");
+  const body = encodeURIComponent(
+    "Hallo,\n\nich interessiere mich für folgende Ausführung:\n\n" +
+    (window.currentSummary || "") +
+    "\n\nBitte senden Sie mir hierzu ein Angebot.\n\nVielen Dank!"
+  );
+
+  window.location.href = `mailto:info@s-om.bayern?subject=${subject}&body=${body}`;
+}
+
+fillSelect('serie', SERIES, 'S2000');
+fillSelect('decor', DECORS, 'DBS Uni');
+fillSelect('carrier', CARRIERS, 'Span25');
+
+['serie','decor','carrier','stained','length','width','qty'].forEach(id => {
+  document.getElementById(id).addEventListener('input', calculate);
+});
+
+calculate();
 </script>
+
 </body>
 </html>
